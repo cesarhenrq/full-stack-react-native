@@ -1,13 +1,15 @@
-import { View, Pressable } from "react-native";
+import { View } from "react-native";
+
+import { Link } from "react-router-native";
 
 import Subheading from "./Subheading";
 
-const AppBarTab = ({ tabName }) => {
+const AppBarTab = ({ tabName, path }) => {
   return (
     <View>
-      <Pressable>
+      <Link to={path}>
         <Subheading color='white'>{tabName}</Subheading>
-      </Pressable>
+      </Link>
     </View>
   );
 };
