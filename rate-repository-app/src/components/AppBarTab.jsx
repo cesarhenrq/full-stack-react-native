@@ -1,12 +1,18 @@
-import { View } from "react-native";
+import { View, StyleSheet } from "react-native";
 
 import { Link } from "react-router-native";
 
 import Subheading from "./Subheading";
 
+const styles = StyleSheet.create({
+  container: {
+    marginRight: 10,
+  },
+});
+
 const AppBarTab = ({ tabName, path }) => {
   return (
-    <View>
+    <View style={styles.container}>
       <Link to={path}>
         <Subheading color='white'>{tabName}</Subheading>
       </Link>
