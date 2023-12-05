@@ -1,6 +1,7 @@
 import { Formik } from "formik";
 
 import SignInForm from "./SignInForm";
+import Loading from "./Loading";
 
 import * as yup from "yup";
 import useSignIn from "../hooks/useSignIn";
@@ -16,20 +17,24 @@ const initialValues = {
 };
 
 const SignIn = () => {
-  const { signIn } = useSignIn();
+  const {
+    signIn,
+    result: { loading },
+  } = useSignIn();
 
   const onSubmit = async (values) => {
     const { username, password } = values;
 
-    console.log(username, password);
-
     try {
-      const { data } = await signIn({ username, password });
-      console.log(data);
+      await signIn({ username, password });
     } catch (e) {
       console.log(e);
     }
   };
+
+  if (loading) {
+    return <Loading />;
+  }
 
   return (
     <Formik
