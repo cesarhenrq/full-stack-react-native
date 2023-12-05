@@ -1,11 +1,6 @@
-import React from "react";
-import {
-  FlatList,
-  View,
-  StyleSheet,
-  Text,
-  ActivityIndicator,
-} from "react-native";
+import { FlatList, View, StyleSheet, Text } from "react-native";
+
+import Loading from "./Loading";
 
 import { useQuery } from "@apollo/client";
 
@@ -13,16 +8,9 @@ import RepositoryItem from "./RepositoryItem";
 
 import { GET_REPOSITORIES } from "../graphql/queries";
 
-import theme from "../theme";
-
 const styles = StyleSheet.create({
   separator: {
     height: 10,
-  },
-  loadingContainer: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
   },
 });
 
@@ -34,11 +22,7 @@ const RepositoryList = () => {
   });
 
   if (loading) {
-    return (
-      <View style={styles.loadingContainer}>
-        <ActivityIndicator size='large' color={theme.colors.appBarBackground} />
-      </View>
-    );
+    return <Loading />;
   }
 
   if (error) {
