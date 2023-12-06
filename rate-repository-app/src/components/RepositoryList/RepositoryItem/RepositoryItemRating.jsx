@@ -1,9 +1,9 @@
 import { View, StyleSheet } from "react-native";
 
-import Text from "./Text";
-import Subheading from "./Subheading";
+import Text from "../../Texts/Text";
+import Subheading from "../../Texts/Subheading";
 
-import formatRatingNumber from "../utils/formatRatingNumber";
+import formatRatingNumber from "../../../utils/formatRatingNumber";
 
 const styles = StyleSheet.create({
   container: {

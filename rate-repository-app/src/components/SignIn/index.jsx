@@ -1,10 +1,10 @@
 import { Formik } from "formik";
 
 import SignInForm from "./SignInForm";
-import Loading from "./Loading";
+import Loading from "../Loading";
 
 import * as yup from "yup";
-import useSignIn from "../hooks/useSignIn";
+import useSignIn from "../../hooks/useSignIn";
 
 const validationSchema = yup.object().shape({
   username: yup.string().required("Username is required"),

@@ -3,7 +3,7 @@ import { View, StyleSheet } from "react-native";
 import RepositoryItemHeader from "./RepositoryItemHeader";
 import RepositoryItemRating from "./RepositoryItemRating";
 
-import theme from "../theme";
+import theme from "../../../theme";
 
 const styles = StyleSheet.create({
   container: {

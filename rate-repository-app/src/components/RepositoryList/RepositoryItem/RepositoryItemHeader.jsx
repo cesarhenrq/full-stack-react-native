@@ -1,8 +1,8 @@
 import { View, Image, StyleSheet } from "react-native";
 
-import Text from "./Text";
-import Subheading from "./Subheading";
-import LanguagueTag from "./LanguageTag";
+import Text from "../../Texts/Text";
+import Subheading from "../../Texts/Subheading";
+import LanguagueTag from "../../LanguageTag";
 
 const styles = StyleSheet.create({
   image: {
