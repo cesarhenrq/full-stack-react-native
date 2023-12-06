@@ -1,9 +1,8 @@
-import { Formik } from "formik";
-
-import SignInForm from "./SignInForm";
 import Loading from "../Loading";
+import SignInContainer from "./SignInContainer";
 
 import * as yup from "yup";
+
 import useSignIn from "../../hooks/useSignIn";
 
 const validationSchema = yup.object().shape({
@@ -37,13 +36,11 @@ const SignIn = () => {
   }
 
   return (
-    <Formik
+    <SignInContainer
       initialValues={initialValues}
       onSubmit={onSubmit}
       validationSchema={validationSchema}
-    >
-      {({ handleSubmit }) => <SignInForm onSubmit={handleSubmit} />}
-    </Formik>
+    />
   );
 };
 
